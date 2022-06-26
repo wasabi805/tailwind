@@ -1,0 +1,4 @@
+# Ignore artifacts:
+.npm-global
+dist
+node_modules
