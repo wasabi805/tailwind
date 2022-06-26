@@ -28,7 +28,6 @@ see Net Ninja's demonstration: https://youtu.be/bxmDnn7lrnk?list=PL4cUxeGkcC9gpX
 Your package.json should include a script to compile ie...
 
 //package.json
-
 {
 "name": "tailwind",
 "version": "1.0.0",
