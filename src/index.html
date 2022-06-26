@@ -4,25 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tailwind Boilerplate</title>
+    <title>Form |Tailwind</title>
     <link rel="stylesheet" href="./style/input.css" />
     <link href="/dist/output.css" rel="stylesheet" />
+    <script type="text/javascript" 
+    src="users.js">
+</script>
   </head>
   <body>
     <script type="text/javascript" src="js/index.js"></script>
 
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <br />
+    <br />
 
-    <p class="text-lg text-orange-500">Erin Lindford</p>
-
-    <p class="text-slate-500">You have a new message!</p>
-
-    <button onclick="console.log('hi')">my button</button>
-
-    <button
-      class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+    <div
+      class="relative flex flex-col items-center"
+      style="border: 1px solid blue"
     >
-      Message
-    </button>
+      <div class="w-1/2 h-96" style="border: 1px solid lime">
+        <h3 class="text-slate-500">Display users</h3>
+        <div>
+          <h3 class="text-slate-500">hi</h3>
+        </div>
+
+        <div>
+          <h3 class="text-slate-500">hi</h3>
+        </div>
+      </div>
+
+      <div
+        id="form-wrapper"
+        class="relative flex flex-col sm:w-full lg:w-1/3 p-4 my-4"
+        style="border: 2px solid magenta"
+      >
+        <h3 class="text-3xl text-slate-500 mb-3">User Form</h3>
+        <form class="relative">
+          <div
+            class="mb-2 flex sm:flex-col lg:flex-row"
+            style="border: 1px solid yellow"
+          >
+            <input
+              placeholder="first name"
+              type="text"
+              class="grow text-pink-500 w-full"
+            />
+            <input
+              placeholder="last name"
+              type="text"
+              class="grow text-pink-500 w-full"
+            />
+          </div>
+
+          <div class="mb-8 flex sm:flex-col lg:flex-row">
+            <input
+              class="w-full text-pink-500"
+              placeholder="city"
+              type="text"
+            />
+            <input
+              class="w-full text-pink-500"
+              placeholder="state"
+              type="text"
+            />
+            <input
+              class="w-full text-pink-500"
+              placeholder="zip code"
+              type="text"
+            />
+          </div>
+        </form>
+        <div>
+          <button
+            class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+            onclick="console.log(users[0].firstName)"
+          >
+            Create User
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

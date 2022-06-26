@@ -1,9 +1,11 @@
-# Tailwind with vanila js
+# Tailwind Simple Form
+
+    Forms : https://v1.tailwindcss.com/components/forms
 
 ## Tailwind Docs
 
-Docs: https://tailwindcss.com/docs/installation
-Tailwind styling classes: https://tailwindcss.com/docs/utility-first
+    Docs: https://tailwindcss.com/docs/installation
+    Tailwind styling classes: https://tailwindcss.com/docs/utility-first
 
 ## Unknown import warninng
 
@@ -45,3 +47,8 @@ Your package.json should include a script to compile ie...
     npm run build-css
 
 }
+
+# Some thoughts on Tailwind
+
+    https://dev.to/brianboyko/tailwindcss-adds-complexity-does-nothing-3hpn
+    https://dev.to/willholmes/tailwindcss-vs-styled-components-in-reactjs-188j
