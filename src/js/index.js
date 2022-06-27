@@ -6,17 +6,20 @@ function capitalize(str) {
 
 function buildUsersList(users) {
   const displayedUsers = document.getElementById("displayUsers");
-  console.log(displayedUsers.childNodes.length - 1, "displayedUsers");
+
   let text;
   const listWrapper = document.createElement("div");
+  listWrapper.id = `user_${displayedUsers.childNodes.length}`;
   listWrapper.style.cssText =
     "margin: 2rem; min-width: 12rem; max-width: 12rem;";
 
   const deleteButton = document.createElement("button");
-  deleteButton.innerHTML = "delete";
-  deleteButton.id = `user_${displayedUsers.childNodes.length - 1}`;
+  deleteButton.id = `user_${displayedUsers.childNodes.length}`;
+  deleteButton.innerHTML = "Delete";
+
   deleteButton.onclick = (e) => {
-    console.log(e.target.id);
+    const deleteUser = document.getElementById(e.target.id);
+    deleteUser.remove();
   };
 
   deleteButton.className =
@@ -29,13 +32,14 @@ function buildUsersList(users) {
   Object.entries(users).forEach((item) => {
     const listItem = document.createElement("li");
     listItem.className = "text-slate-500";
+
     text = document.createTextNode(`${item[0]} : ${item[1]}`);
 
     listItem.append(text);
 
     list.appendChild(listItem);
   });
-  console.log(list);
+
   listWrapper.appendChild(list);
   listWrapper.append(deleteButton);
   document.getElementById("displayUsers").appendChild(listWrapper);
@@ -52,4 +56,8 @@ function handleSubmit() {
   }
 
   buildUsersList(newUser);
+
+  for (var i = 0; i < Object.entries(userForm).length; i++) {
+    userForm[i].value = "";
+  }
 }
