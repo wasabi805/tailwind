@@ -7,14 +7,11 @@
     <title>Form |Tailwind</title>
     <link rel="stylesheet" href="./style/input.css" />
     <link href="/dist/output.css" rel="stylesheet" />
-    <script type="text/javascript" 
-    src="users.js">
-</script>
+    <script type="text/javascript" src="js/index.js"></script>
   </head>
   <body>
-    <script type="text/javascript" src="js/index.js"></script>
-
     <br />
+
     <br />
 
     <div
@@ -37,50 +34,61 @@
         class="relative flex flex-col sm:w-full lg:w-1/3 p-4 my-4"
         style="border: 2px solid magenta"
       >
-        <h3 class="text-3xl text-slate-500 mb-3">User Form</h3>
-        <form class="relative">
-          <div
+        <fieldset>
+          <legend class="text-3xl text-slate-500 mb-3">
+            Enter User Information
+          </legend>
+
+          <form
+            id="userForm"
             class="mb-2 flex sm:flex-col lg:flex-row"
             style="border: 1px solid yellow"
           >
             <input
               placeholder="first name"
+              name="firstName"
+              value=""
               type="text"
               class="grow text-pink-500 w-full"
             />
             <input
               placeholder="last name"
-              type="text"
+              name="last name"
+              value=""
               class="grow text-pink-500 w-full"
+              type="text"
             />
-          </div>
 
-          <div class="mb-8 flex sm:flex-col lg:flex-row">
             <input
-              class="w-full text-pink-500"
               placeholder="city"
+              name="city"
+              value=""
+              class="w-full text-pink-500"
               type="text"
             />
             <input
-              class="w-full text-pink-500"
               placeholder="state"
+              name="state"
+              value=""
+              class="w-full text-pink-500"
               type="text"
             />
             <input
-              class="w-full text-pink-500"
               placeholder="zip code"
+              name="state"
+              value=""
+              class="w-full text-pink-500"
               type="text"
             />
-          </div>
-        </form>
-        <div>
+          </form>
           <button
+            type="submit"
             class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-            onclick="console.log(users[0].firstName)"
+            onclick="handleSubmit()"
           >
             Create User
           </button>
-        </div>
+        </fieldset>
       </div>
     </div>
   </body>
