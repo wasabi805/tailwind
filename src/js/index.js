@@ -1,20 +1,12 @@
 console.log("i work");
 
-const users = [
-  {
-    firstName: "Matt",
-    lastName: "Murdock",
-    addressLine: "1234 Hells Kitchen Dr",
-    city: "New York",
-    state: "NY",
-    zipcode: "12345",
-  },
-];
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function buildUsersList(users) {
+  const displayedUsers = document.getElementById("displayUsers");
+  console.log(displayedUsers.childNodes.length - 1, "displayedUsers");
   let text;
   const listWrapper = document.createElement("div");
   listWrapper.style.cssText =
@@ -22,9 +14,11 @@ function buildUsersList(users) {
 
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = "delete";
-  deleteButton.onclick = () => {
-    alert("hi");
+  deleteButton.id = `user_${displayedUsers.childNodes.length - 1}`;
+  deleteButton.onclick = (e) => {
+    console.log(e.target.id);
   };
+
   deleteButton.className =
     "px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2";
 
