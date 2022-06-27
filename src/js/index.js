@@ -1,6 +1,13 @@
 console.log("i work");
 
 function capitalize(str) {
+  if (str.includes("_")) {
+    const newStr = str.split("_");
+    return newStr.reduce(
+      (acc, cur) => acc + cur.charAt(0).toUpperCase() + cur.slice(1) + " ",
+      ""
+    );
+  }
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
@@ -10,8 +17,10 @@ function buildUsersList(users) {
   let text;
   const listWrapper = document.createElement("div");
   listWrapper.id = `user_${displayedUsers.childNodes.length}`;
+  listWrapper.className =
+    "block max-w-sm h-56 text-center bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700";
   listWrapper.style.cssText =
-    "margin: 2rem; min-width: 12rem; max-width: 12rem;";
+    "margin: 2rem; min-width: 14rem; max-width: 14rem;";
 
   const deleteButton = document.createElement("button");
   deleteButton.id = `user_${displayedUsers.childNodes.length}`;
@@ -26,14 +35,15 @@ function buildUsersList(users) {
     "px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2";
 
   const list = document.createElement("o");
-  list.style.cssText = "list-style: none; ";
+  list.style.cssText =
+    "list-style: none; margin-bottom: 1rem; display: block; text-align: left;";
 
   /* Turn Object into ordered list */
   Object.entries(users).forEach((item) => {
     const listItem = document.createElement("li");
     listItem.className = "text-slate-500";
 
-    text = document.createTextNode(`${item[0]} : ${item[1]}`);
+    text = document.createTextNode(`${capitalize(item[0])} : ${item[1]}`);
 
     listItem.append(text);
 

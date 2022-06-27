@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="./style/input.css" />
     <link href="/dist/output.css" rel="stylesheet" />
     <script type="text/javascript" src="js/index.js"></script>
+    <style>
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        background: lime;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
     <br />
@@ -21,7 +28,11 @@
       <div
         id="displayUsers"
         class="w-full h-96 flex text-slate-500"
-        style="border: 1px solid lime; overflow: scroll"
+        style="
+          border: 1px solid lime;
+          overflow: scroll;
+          scrollbar-color: white #010d0c;
+        "
       ></div>
 
       <div
