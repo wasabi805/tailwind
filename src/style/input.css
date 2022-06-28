@@ -4,8 +4,18 @@
 
 HTML,
 body {
+  background: #010d0c;
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   border: 0px;
+  -webkit-transition: all 1s ease;
+}
+
+/* see : https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+#displayUsers::-webkit-scrollbar {
+  background: #052724;
+}
+#displayUsers::-webkit-scrollbar-thumb {
+  background: #145954;
 }
