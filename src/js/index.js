@@ -1,5 +1,3 @@
-console.log("i work");
-
 function capitalize(str) {
   if (str.includes("_")) {
     const newStr = str.split("_");
@@ -20,7 +18,7 @@ function buildUsersList(users) {
   listWrapper.className =
     "block max-w-sm h-56 text-center bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700";
   listWrapper.style.cssText =
-    "margin: 2rem; min-width: 14rem; max-width: 14rem;";
+    "margin: 2rem; min-width: 14rem; max-width: 14rem; padding: 1em";
 
   const deleteButton = document.createElement("button");
   deleteButton.id = `user_${displayedUsers.childNodes.length}`;
@@ -36,12 +34,12 @@ function buildUsersList(users) {
 
   const list = document.createElement("o");
   list.style.cssText =
-    "list-style: none; margin-bottom: 1rem; display: block; text-align: left;";
+    "list-style: none; margin-bottom: 2rem; display: block; text-align: left;";
 
   /* Turn Object into ordered list */
   Object.entries(users).forEach((item) => {
     const listItem = document.createElement("li");
-    listItem.className = "text-slate-500";
+    listItem.style.cssText = "color: white;";
 
     text = document.createTextNode(`${capitalize(item[0])} : ${item[1]}`);
 
@@ -67,7 +65,7 @@ function handleSubmit() {
 
   buildUsersList(newUser);
 
-  for (var i = 0; i < Object.entries(userForm).length; i++) {
-    userForm[i].value = "";
-  }
+  Object.values(userForm).forEach((input) => {
+    input.value = "";
+  });
 }
